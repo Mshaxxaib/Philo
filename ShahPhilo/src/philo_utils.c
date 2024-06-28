@@ -40,6 +40,9 @@ int p_atoi(char *av, t_philo *philo, t_table *table)
     {
         res = (res * 10) + (av[i++] - '0');
     }
-    //need to add edge checks
+    if((res > 4294967295 && sign == 1) || res == 0)
+        philo_free(ERR_INPUT, philo, table);
+    if((res > 4294967295 && sign == -1) || res == 0)
+        philo_free(ERR_INPUT, philo, table);
     return(res * sign);
 }
