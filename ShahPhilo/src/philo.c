@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtcsbza <vtcsbza@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 19:19:23 by vtcsbza           #+#    #+#             */
-/*   Updated: 2024/06/25 19:58:09 by vtcsbza          ###   ########.fr       */
+/*   Updated: 2024/06/28 20:11:41 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,15 @@ int philo_num_check(char **av)
 
 int main(int ac, char **av)
 {
-    t_philo philo;
-    t_table table;
+    t_philo *philo;
+    t_table *table;
 
     if(philo_num_check(av) && av != 5 || av != 6)
         print_error("ERROR in the INPUT\n");
-    // philo = 
+    philo = malloc(sizeof(t_philo) * philo_atoi(av[1], NULL, NULL));
+    if(!philo)
+        print_error("Error in Malloc");
+    table = philo_init(av, philo);
     //  need to check the number of philos 
     
 }
