@@ -6,7 +6,7 @@
 /*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 19:34:34 by vtcsbza           #+#    #+#             */
-/*   Updated: 2024/06/28 20:43:55 by mshazaib         ###   ########.fr       */
+/*   Updated: 2024/06/28 20:56:14 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int p_strlen(char *str)
     int count;
 
     count = 0;
-    while(str[count])
+    while (str[count])
         count++;
-    return(count);
+    return (count);
 }
 
 int p_atoi(char *av, t_philo *philo, t_table *table)
@@ -31,18 +31,18 @@ int p_atoi(char *av, t_philo *philo, t_table *table)
     while (av[i] == ' ' || av[i] == '\f' || av[i] == '\n'
 		|| av[i] == '\r' || av[i] == '\t' || av[i] == '\v')
     i++;
-    if(av[i] == "+" || av[i] == "-")
+    if (av[i] == "+" || av[i] == "-")
     {
-        if(av[i++] == '-')
+        if (av[i++] == '-')
             sign = sign * -1;        
     }
-    while(av[i] >= '0' && av[i] <= '9')
+    while (av[i] >= '0' && av[i] <= '9')
     {
         res = (res * 10) + (av[i++] - '0');
     }
-    if((res > 4294967295 && sign == 1) || res == 0)
-        philo_free("Error in Input", philo, table);
-    if((res > 4294967295 && sign == -1) || res == 0)
-        philo_free("Error in Input", philo, table);
-    return(res * sign);
+    if ((res > 4294967295 && sign == 1) || res == 0)
+        philo_free(ERR_INPUT, philo, table);
+    if ((res > 4294967295 && sign == -1) || res == 0)
+        philo_free(ERR_INPUT, philo, table);
+    return (res * sign);
 }

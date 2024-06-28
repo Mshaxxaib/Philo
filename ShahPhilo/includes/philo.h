@@ -6,7 +6,7 @@
 /*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 19:16:08 by vtcsbza           #+#    #+#             */
-/*   Updated: 2024/06/28 20:44:45 by mshazaib         ###   ########.fr       */
+/*   Updated: 2024/06/28 20:56:57 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 #include <sys/time.h>
 #include <stdio.h>
 #include <stdbool.h>
+
+# define ERR_INPUT "Error in input\n"
+# define ERR_MALLOC "Error while allocating memory space\n"
+# define ERR_ "Error in input\n"
+
 
 typedef struct t_table
 {
@@ -37,8 +42,9 @@ typedef struct t_philo
 }   t_philo;
 
 
-int p_strlen(char *str);
-int p_atoi(char *av, t_philo *philo, t_table *table);
+int     p_strlen(char *str);
+int     p_atoi(char *av, t_philo *philo, t_table *table);
+void    philo_free(char **err, t_philo *philo, t_table *table);
 
 
 #endif

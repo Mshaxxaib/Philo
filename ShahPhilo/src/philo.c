@@ -6,7 +6,7 @@
 /*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 19:19:23 by vtcsbza           #+#    #+#             */
-/*   Updated: 2024/06/28 20:45:24 by mshazaib         ###   ########.fr       */
+/*   Updated: 2024/06/28 20:56:40 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int philo_num_check(char **av)
     int j;
     
     i = 1;
-
     while(av[1])
     {
         j = 0;
@@ -45,10 +44,10 @@ int main(int ac, char **av)
     t_table *table;
 
     if(philo_num_check(av) && av != 5 || av != 6)
-        print_error("ERROR in the INPUT\n");
+        print_error(ERR_INPUT);
     philo = malloc(sizeof(t_philo) * p_atoi(av[1], NULL, NULL));
     if(!philo)
-        print_error("Error in Malloc");
+        print_error(ERR_MALLOC);
     table = philo_init(av, philo);
     //  need to check the number of philos 
     
