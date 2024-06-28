@@ -6,7 +6,7 @@
 /*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 20:11:56 by mshazaib          #+#    #+#             */
-/*   Updated: 2024/06/28 20:38:58 by mshazaib         ###   ########.fr       */
+/*   Updated: 2024/06/28 20:44:58 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ static t_table *table_init(char **av, t_philo *philo, t_table *table)
 	int i;
 
 	i = 0;
-	table->nop = philo_atoi(av[i++], philo, table);
-	table->time_to_eat = philo_atoi(av[i++], philo, table);
-	table->time_to_sleep = philo_atoi(av[i++], philo, table);
-	table->time_to_die = philo_atoi(av[i++], philo, table);
+	table->nop = p_atoi(av[i++], philo, table);
+	table->time_to_eat = p_atoi(av[i++], philo, table);
+	table->time_to_sleep = p_atoi(av[i++], philo, table);
+	table->time_to_die = p_atoi(av[i++], philo, table);
 	if(av[i])
-		table->goal = philo_atoi(av[i], philo, table);
+		table->goal = p_atoi(av[i], philo, table);
 	else
 		table->goal = 0;
 	table->philo_dead = false;

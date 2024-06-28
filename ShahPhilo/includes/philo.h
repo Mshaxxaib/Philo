@@ -6,7 +6,7 @@
 /*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 19:16:08 by vtcsbza           #+#    #+#             */
-/*   Updated: 2024/06/28 20:39:13 by mshazaib         ###   ########.fr       */
+/*   Updated: 2024/06/28 20:44:45 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct t_philo
 
 
 int p_strlen(char *str);
+int p_atoi(char *av, t_philo *philo, t_table *table);
 
 
 #endif
