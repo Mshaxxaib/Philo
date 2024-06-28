@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtcsbza <vtcsbza@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 19:34:34 by vtcsbza           #+#    #+#             */
-/*   Updated: 2024/06/25 20:05:42 by vtcsbza          ###   ########.fr       */
+/*   Updated: 2024/06/28 20:43:55 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ int p_atoi(char *av, t_philo *philo, t_table *table)
         res = (res * 10) + (av[i++] - '0');
     }
     if((res > 4294967295 && sign == 1) || res == 0)
-        philo_free(ERR_INPUT, philo, table);
+        philo_free("Error in Input", philo, table);
     if((res > 4294967295 && sign == -1) || res == 0)
-        philo_free(ERR_INPUT, philo, table);
+        philo_free("Error in Input", philo, table);
     return(res * sign);
 }
