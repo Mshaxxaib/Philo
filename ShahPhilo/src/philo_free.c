@@ -6,13 +6,13 @@
 /*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 16:01:42 by codespace         #+#    #+#             */
-/*   Updated: 2024/06/30 19:12:41 by mshazaib         ###   ########.fr       */
+/*   Updated: 2024/06/30 19:48:28 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-void    philo_free(char **err, t_philo *philo, t_table *table)
+void    philo_free(char *err, t_philo *philo, t_table *table)
 {
     unsigned int    i;
 

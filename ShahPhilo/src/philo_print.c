@@ -6,7 +6,7 @@
 /*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 17:21:26 by mshazaib          #+#    #+#             */
-/*   Updated: 2024/06/30 17:53:29 by mshazaib         ###   ########.fr       */
+/*   Updated: 2024/06/30 20:22:08 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void philo_thinking(t_philo *philo)
 {
 	printf("%lu %d is thinking\n", philo_utime(philo), philo->id);
 }
-static void philo_dead(t_philo *philo)
+static void philo_sleeping(t_philo *philo)
 {
 	printf("%lu %d is sleeping\n", philo_utime(philo), philo->id);
 }
@@ -39,7 +39,7 @@ void philo_print(t_philo *philo, t_state state)
 		if(state == EATING)
 			philo_eating(philo);
 		if(state == SLEEPING)
-			philo_sleep(philo);
+			philo_sleeping(philo);
 		if(state == THINKING)
 			philo_thinking(philo);
 		pthread_mutex_unlock(&philo->table->dlock);

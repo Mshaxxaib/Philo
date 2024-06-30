@@ -6,7 +6,7 @@
 /*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 20:11:56 by mshazaib          #+#    #+#             */
-/*   Updated: 2024/06/30 16:32:58 by mshazaib         ###   ########.fr       */
+/*   Updated: 2024/06/30 20:44:11 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ static void assign_forks(t_philo *philo, t_table *table)
 			philo[i].rfork = &table->forks[i + 1];
 		philo[i].lmfork = &table->m_fork[i];
 		if(i == table->nop - 1)
-			philo[i].rmfork = table->m_fork[0];
+			philo[i].rmfork = &table->m_fork[0];
 		else
 			philo[i].rmfork = &table->m_fork[i + 1];
-		philo[i].lfork = &table->fo_lock[i];
+		philo[i].lffork = &table->fo_lock[i];
 		if(i == table->nop - 1)
 			philo[i].rffork = &table->fo_lock[0];
 		else
@@ -72,7 +72,7 @@ static t_table *table_init(char **av, t_philo *philo, t_table *table)
 {
 	int i;
 
-	i = 0;
+	i = 1;
 	table->nop = p_atoi(av[i++], philo, table);
 	table->time_to_eat = p_atoi(av[i++], philo, table);
 	table->time_to_sleep = p_atoi(av[i++], philo, table);

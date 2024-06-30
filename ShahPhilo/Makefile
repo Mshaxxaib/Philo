@@ -6,7 +6,7 @@
 #    By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/30 19:15:19 by mshazaib          #+#    #+#              #
-#    Updated: 2024/06/30 19:40:01 by mshazaib         ###   ########.fr        #
+#    Updated: 2024/06/30 20:27:44 by mshazaib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,16 +17,17 @@ INC_DIR 	= -Iincludes
 CC 			= gcc
 CFLAGS 		= -Wall -Wextra -Werror
 PHILO_FLAGS = -g -pthread
-RM 			= rm - rf
+RM 			= rm -rf
 
-SRC 		= philo.c\
+SRC 	= 	philo.c\
 			philo_check_pulse.c\
-			philo_free\
-			philo_init\
-			philo_print\
-			philo_solo\
-			philo_spawn\
-			philo_utils\
+			philo_free.c\
+			philo_life.c\
+			philo_init.c\
+			philo_print.c\
+			philo_solo.c\
+			philo_spawn.c\
+			philo_utils.c\
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%c=%o))
 

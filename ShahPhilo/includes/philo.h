@@ -6,7 +6,7 @@
 /*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 19:16:08 by vtcsbza           #+#    #+#             */
-/*   Updated: 2024/06/30 19:13:06 by mshazaib         ###   ########.fr       */
+/*   Updated: 2024/06/30 20:21:38 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ typedef struct t_table
     bool philo_dead;
     size_t  p_start;
     pthread_mutex_t *fo_lock;
-    pthread_mutex_t *dlock;
-    pthread_mutex_t *plock;
+    pthread_mutex_t dlock;
+    pthread_mutex_t plock;
 }   t_table;
 
 typedef struct t_philo
@@ -74,8 +74,8 @@ typedef struct t_philo
 
 int     p_strlen(char *str);
 int     p_atoi(char *av, t_philo *philo, t_table *table);
-void    philo_free(char **err, t_philo *philo, t_table *table);
-void    print_error(char **error);
+void    philo_free(char *err, t_philo *philo, t_table *table);
+void    print_error(char *error);
 void    philo_start_clock(t_philo *philo, t_table *table);
 size_t  philo_utime(t_philo *philo);
 void    philo_solo(t_philo *philo);
@@ -85,7 +85,15 @@ int     philo_check_pulse(t_philo *philo);
 void    philo_unlock_forks(t_philo *philo);
 void    philo_lock_forks(t_philo *philo);
 
+t_table *philo_init(char **av, t_philo *philo);
+
 void    philo_spawn(t_philo *philo, t_table *table);
 void philo_cleanup(t_table *table, t_philo *philo);
+
+void philo_sleep(t_philo *philo);
+void philo_think(t_philo *philo);
+void philo_snooze(t_philo *philo, unsigned int target);
+void philo_eat(t_philo *philo);
+
 
 #endif

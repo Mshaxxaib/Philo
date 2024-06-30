@@ -6,7 +6,7 @@
 /*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 16:33:33 by mshazaib          #+#    #+#             */
-/*   Updated: 2024/06/30 19:05:37 by mshazaib         ###   ########.fr       */
+/*   Updated: 2024/06/30 20:23:24 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void *philo_table(void *philo)
 	{
 		philo_lock_forks(philo);
 		if(!(*p->lfork) && !(*p->rfork) && (*p->lmfork) != p->id && (*p->rmfork) != p->id)
-			philo_eating(p);
+			philo_eat(p);
 		else
 			philo_unlock_forks(philo);
 		pthread_mutex_lock(&p->table->dlock);
@@ -67,14 +67,14 @@ void philo_spawn(t_philo *philo, t_table *table)
 
 	philo_start_clock(philo, table);
 	if(philo->table->nop == 1)
-		pholo_solo(philo);
+		philo_solo(philo);
 	else
 	{
 		
 		i = -1;
 		while(++i < philo->table->nop)
 		{
-			if(pthread_create(&philo[i].thread, NULL, &philo_table, &philo[i] != 0 ))
+			if(pthread_create(&philo[i].thread, NULL, &philo_table, &philo[i]) != 0 )
 				philo_free(ERR_THREAD,philo, table);
 			usleep(100);
 		}
