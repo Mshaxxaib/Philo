@@ -6,11 +6,17 @@
 /*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 19:19:23 by vtcsbza           #+#    #+#             */
-/*   Updated: 2024/06/28 20:56:40 by mshazaib         ###   ########.fr       */
+/*   Updated: 2024/06/30 19:13:24 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
+
+void philo_start_clock(t_philo *philo, t_table *table)
+{
+    gettimeofday(&philo->start, NULL);
+    table->p_start = (philo->start.tv_sec * 1000) + (philo->start.tv_usec / 1000);
+}
 
 void print_error(char **error)
 {
@@ -49,6 +55,7 @@ int main(int ac, char **av)
     if(!philo)
         print_error(ERR_MALLOC);
     table = philo_init(av, philo);
-    //  need to check the number of philos 
-    
+    philo_spawn(philo, table);
+    philo_cleanup(philo, table);
+    return (0);
 }

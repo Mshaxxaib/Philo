@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   philo_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amalbrei <amalbrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mshazaib <mshazaib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:32:22 by amalbrei          #+#    #+#             */
-/*   Updated: 2022/11/27 16:29:30 by amalbrei         ###   ########.fr       */
+/*   Updated: 2024/06/30 15:29:52 by mshazaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "
+philo.h"
 
 int	philo_atoi(char *av, t_philo *philo, t_table *table)
 {
